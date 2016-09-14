@@ -4,23 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.PlayActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#d27777">
     <ProgressBar
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="200dp"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
         android:layout_gravity="center_horizontal"
-
         android:id="@+id/progress_time"
-        android:background="#d27777"/>
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:text="0"
-        android:textSize="60sp"
+        android:textColor="#ffffff"
+        android:textSize="70sp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
         android:id="@+id/tv_play_score"/>
     <ImageView
         android:layout_width="match_parent"
@@ -28,8 +31,8 @@
         android:layout_marginLeft="16dp"
         android:layout_height="0dp"
         android:layout_weight="5"
+        android:background="@drawable/textview_circle"
         android:id="@+id/image_pokemon"
-        android:background="#d27777"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +53,7 @@
                 android:text="pokemon"
                 android:layout_marginRight="16dp"
                 android:id="@+id/btn_ans_a"
-                android:background="#d27777"
+                android:background="@drawable/textview_circle"
                 />
             <TextView
                 android:layout_width="0dp"
@@ -59,7 +62,7 @@
                 android:gravity="center"
                 android:text="pokemon"
                 android:id="@+id/btn_ans_b"
-                android:background="#d27777"
+                android:background="@drawable/textview_circle"
                 />
         </LinearLayout>
         <LinearLayout
@@ -75,7 +78,7 @@
                 android:gravity="center"
                 android:text="pokemon"
                 android:id="@+id/btn_ans_c"
-                android:background="#d27777"
+                android:background="@drawable/textview_circle"
                 />
             <TextView
                 android:layout_width="0dp"
@@ -84,7 +87,7 @@
                 android:gravity="center"
                 android:text="pokemon"
                 android:id="@+id/btn_ans_d"
-                android:background="#d27777"
+                android:background="@drawable/textview_circle"
                 />
         </LinearLayout>
     </LinearLayout>

@@ -1,8 +1,10 @@
 package com.example.nhan.pokemonquizzapp1.activities;
 
+import android.annotation.TargetApi;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -70,11 +72,12 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 //        getData();
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_ans_a:
-
+                    btnAnswerA.setBackground(getDrawable(R.drawable.textview_circle_green));
                 break;
             case R.id.btn_ans_b:
 
