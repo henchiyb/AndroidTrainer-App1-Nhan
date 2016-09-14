@@ -1,5 +1,8 @@
 package com.example.nhan.pokemonquizzapp1.activities;
 
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +13,10 @@ import android.widget.TextView;
 import com.example.nhan.pokemonquizzapp1.R;
 import com.example.nhan.pokemonquizzapp1.database.DatabaseAsset;
 import com.example.nhan.pokemonquizzapp1.models.Pokemon;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 public class PlayActivity extends AppCompatActivity implements View.OnClickListener {
@@ -46,12 +52,22 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         btnAnswerC.setOnClickListener(this);
         btnAnswerD.setOnClickListener(this);
 
-        DatabaseAsset databaseAsset = DatabaseAsset.getInstance(this.getBaseContext());
+
+
+        Picasso.with(this).load( "file:///android_asset/images/Abra.png").into(imagePokemon);
+    }
+
+
+    private void getData(){
+        DatabaseAsset databaseAsset = DatabaseAsset.getInstance(getApplicationContext());
         databaseAsset.open();
         pokemonList = databaseAsset.getDataPokemon();
         databaseAsset.close();
-
-        imagePokemon.set
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        getData();
     }
 
     @Override

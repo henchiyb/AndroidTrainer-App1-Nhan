@@ -32,14 +32,12 @@ public class DatabaseAsset {
     }
 
     public void open(){
-        if(database == null){
-            database = openHelper.getWritableDatabase();
-        }
+            this.database = openHelper.getWritableDatabase();
     }
 
     public void close(){
         if(database != null){
-            database.close();
+            this.database.close();
         }
     }
 
