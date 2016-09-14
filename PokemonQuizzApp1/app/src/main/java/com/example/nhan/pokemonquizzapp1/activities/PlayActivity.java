@@ -53,15 +53,11 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         btnAnswerB.setOnClickListener(this);
         btnAnswerC.setOnClickListener(this);
         btnAnswerD.setOnClickListener(this);
-
-
-
-        Picasso.with(this).load( "file:///android_asset/images/Abra.png").into(imagePokemon);
     }
 
 
     private void getData(){
-        DatabaseAsset databaseAsset = DatabaseAsset.getInstance(getApplicationContext());
+        DatabaseAsset databaseAsset = DatabaseAsset.getInstance(this);
         databaseAsset.open();
         pokemonList = databaseAsset.getDataPokemon();
         databaseAsset.close();
@@ -69,7 +65,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-//        getData();
+        getData();
+        Picasso.with(this).load( "file:///android_asset/images/" + pokemonList.get(3).getPokemonImage()).into(imagePokemon);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
